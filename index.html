@@ -114,8 +114,37 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             flex-wrap: wrap;
+        }
+
+        .header-options-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-right: 12px;
+            border-right: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        .header-option-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .header-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--md-sys-color-outline);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .header-buttons-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: nowrap;
         }
 
         .status-badge {
@@ -901,22 +930,32 @@
                 <span id="save-status">Tersimpan</span>
             </div>
 
-            <select id="paper-size-select" class="select-control" title="Ukuran Kertas">
-                <option value="A4">A4 (210 × 297mm)</option>
-                <option value="F4">F4 (210 × 330mm)</option>
-            </select>
+            <div class="header-options-group">
+                <div class="header-option-col">
+                    <label class="header-label" for="paper-size-select">Ukuran Kertas</label>
+                    <select id="paper-size-select" class="select-control" title="Ukuran Kertas">
+                        <option value="A4">A4 (210 × 297mm)</option>
+                        <option value="F4">F4 (210 × 330mm)</option>
+                    </select>
+                </div>
 
-            <select id="margin-select" class="select-control" title="Margin CV">
-                <option value="narrow">Margin Narrow (12mm)</option>
-                <option value="normal" selected>Margin Normal (18mm)</option>
-                <option value="wide">Margin Wide (24mm)</option>
-            </select>
+                <div class="header-option-col">
+                    <label class="header-label" for="margin-select">Margin CV</label>
+                    <select id="margin-select" class="select-control" title="Margin CV">
+                        <option value="narrow">Margin Narrow (12mm)</option>
+                        <option value="normal" selected>Margin Normal (18mm)</option>
+                        <option value="wide">Margin Wide (24mm)</option>
+                    </select>
+                </div>
+            </div>
 
-            <button class="btn btn-outlined btn-sm" id="btn-load-sample">Load Example</button>
-            <button class="btn btn-danger btn-sm" id="btn-reset">Reset</button>
-            <button class="btn btn-primary btn-sm" id="btn-print">
-                <span class="material-symbols-outlined" style="font-size: 16px;">print</span> Print / PDF
-            </button>
+            <div class="header-buttons-row">
+                <button class="btn btn-outlined btn-sm" id="btn-load-sample">Load Example</button>
+                <button class="btn btn-danger btn-sm" id="btn-reset">Reset</button>
+                <button class="btn btn-primary btn-sm" id="btn-print">
+                    <span class="material-symbols-outlined" style="font-size: 16px;">print</span> Print / PDF
+                </button>
+            </div>
         </div>
     </header>
 
